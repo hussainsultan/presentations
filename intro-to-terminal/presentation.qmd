@@ -2,6 +2,9 @@
 title: "Why Bother with the Terminal?"
 format:
   revealjs:
+    width: 1600
+    height: 900
+    slide-level: 2
     theme: simple
     slide-number: true
     incremental: true
@@ -27,7 +30,7 @@ for f in *.jpg; do magick convert "$f" -resize 50% "small_$f"; done
 <script src="https://asciinema.org/a/733408.js" id="asciicast-733408" async="true"></script>
 
 ***
-## Why It Actually Matters
+## Why It Matters
 
 - **Remote Work Reality:** Most servers have no GUI — terminal is your only option
 - **Speed & Scale:** Do in 1 command what takes 100 clicks
@@ -37,10 +40,11 @@ for f in *.jpg; do magick convert "$f" -resize 50% "small_$f"; done
 ***
 ## Breaking Down the Magic
 
+::: {.smaller}
+
 ```bash
 for f in *.png; do echo $f; magick $f -resize 50% small_$f; done
 ```
-
 **Part by part:**
 
 - `for f in *.png` → Loop through every `.png` file in this folder
@@ -50,6 +54,7 @@ for f in *.png; do echo $f; magick $f -resize 50% small_$f; done
 - `-resize 50%` → Make it half the size
 - `small_$f` → Save it with "small_" in front of the original name
 - `done` → End the loop
+:::
 
 ## Real Everyday Wins
 
@@ -79,10 +84,12 @@ for f in *.log; do grep "ERROR" "$f" > errors_"$f"; done
 - **"It's too hard"** → Start with 3 commands, learn 1 new one per week
 - **"I don't need it"** → You will the day you need to work on a remote server
 - **"GUIs are faster"** → For one file, yes. For 100 files, absolutely not.
+
 ***
 ## Your First Week Challenge
 
-Learn navigation
+Learn navigation:
+
 - `ls` (list files)
 - `cd` (change directory)
 - `pwd` (where am I?)
@@ -94,7 +101,10 @@ Result: You can now navigate and find anything on any computer.
 
 The bottom line: If you ever work with servers, cloud services, or need to process multiple files — the terminal isn't optional, it's inevitable.
 
-Start now with baby steps.
+### Helpful resources:
+
+- https://cmdchallenge.com/
+
 ***
 ## Thank You!
 Questions?
