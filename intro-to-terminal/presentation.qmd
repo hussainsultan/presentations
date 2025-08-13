@@ -1,0 +1,100 @@
+---
+title: "Why Bother with the Terminal?"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    incremental: true
+    css:
+      - "slide-theme.css"
+---
+
+# Introduction
+
+- Fetch the weather in the terminal:
+```bash
+curl wttr.in
+```
+- Batch resize 100 images in one line:
+```bash
+for f in *.jpg; do magick convert "$f" -resize 50% "small_$f"; done
+```
+
+**Question:** How many clicks would that take in a GUI? How long would you wait?
+
+***
+## Demo
+<script src="https://asciinema.org/a/733408.js" id="asciicast-733408" async="true"></script>
+
+***
+## Why It Actually Matters
+
+- **Remote Work Reality:** Most servers have no GUI — terminal is your only option
+- **Speed & Scale:** Do in 1 command what takes 100 clicks
+- **It's Always There:** Every Mac, every Linux server, every cloud instance
+- **Troubleshooting:** When things break, GUIs often fail first — terminal keeps working
+
+***
+## Breaking Down the Magic
+
+```bash
+for f in *.png; do echo $f; magick $f -resize 50% small_$f; done
+```
+
+**Part by part:**
+
+- `for f in *.png` → Loop through every `.png` file in this folder
+- `do` → Start the loop body
+- `echo $f` → Print the filename (so you can see progress)
+- `magick $f` → Take the current file (whatever `$f` is)
+- `-resize 50%` → Make it half the size
+- `small_$f` → Save it with "small_" in front of the original name
+- `done` → End the loop
+
+## Real Everyday Wins
+
+Find that file you lost:
+```bash
+find . -name "*budget*" -type f
+```
+
+See what's eating your disk space:
+```bash
+du -sh * | sort -hr
+```
+
+Download without opening a browser:
+```bash
+wget https://example.com/report.pdf
+```
+
+Process 1000 files at once:
+```bash
+for f in *.log; do grep "ERROR" "$f" > errors_"$f"; done
+```
+***
+## Common Fears (And Why They're Wrong)
+
+- **"I'll break something"** → You can't break anything by looking (`ls`, `cat`, `grep`)
+- **"It's too hard"** → Start with 3 commands, learn 1 new one per week
+- **"I don't need it"** → You will the day you need to work on a remote server
+- **"GUIs are faster"** → For one file, yes. For 100 files, absolutely not.
+***
+## Your First Week Challenge
+
+Learn navigation
+- `ls` (list files)
+- `cd` (change directory)
+- `pwd` (where am I?)
+
+Result: You can now navigate and find anything on any computer.
+
+***
+## Call to Action
+
+The bottom line: If you ever work with servers, cloud services, or need to process multiple files — the terminal isn't optional, it's inevitable.
+
+Start now with baby steps.
+***
+## Thank You!
+Questions?
