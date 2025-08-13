@@ -98,3 +98,5 @@ Start now with baby steps.
 ***
 ## Thank You!
 Questions?
+
+Available here: https://github.com/hussainsultan/presentations/
